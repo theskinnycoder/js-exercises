@@ -212,7 +212,28 @@ function isAnagram(str1, str2) {
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
  * ex. 'hello there' === 'Ifmmp UIfsf'
  */
-function letterChanges(str) {}
+function letterChanges(str) {
+  let ans = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      ans = ans + " ";
+    } else {
+      let result = String.fromCharCode(str.charCodeAt(i) + 1);
+      if (
+        result === "a" ||
+        result === "e" ||
+        result === "o" ||
+        result === "i" ||
+        result === "u"
+      ) {
+        ans = ans + result.toUpperCase();
+      } else {
+        ans = ans + result;
+      }
+    }
+  }
+  return ans;
+}
 
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
@@ -246,4 +267,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(isAnagram("elbow", "below"));
+console.log(letterChanges("hello there"));
