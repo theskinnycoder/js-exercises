@@ -105,6 +105,48 @@ function longestWord(sen) {
   // SOLUTION 1 - Return a single longest word
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+
+  let longestWord = "";
+  let dummy = "";
+  let len = sen.length;
+  let ans = new Array(); //to store the multiple words of same words length
+
+  let result = new Array();
+  let j = 0,
+    maxi = 0;
+
+  for (let i = 0; i < len; i++) {
+    dummy = "";
+    //this loop will run untill " " and divide the words
+    while (sen[i] !== " " && i < len) {
+      dummy += sen[i];
+      i++;
+    }
+
+    //it check it is a longest word than previse longest word
+    if (dummy.length >= longestWord.length) {
+      longestWord = dummy;
+      maxi = longestWord.length;
+      ans[j] = longestWord;
+      j++;
+    }
+  }
+
+  //this loop to store same longest length words into result array
+  let ind = 0;
+  for (let i = 0; i < ans.length; i++) {
+    if (ans[i].length === maxi) {
+      result[ind] = ans[i];
+      ind++;
+    }
+  }
+
+  //if array contain only one longest string then it return string
+  if (result.length == 1) {
+    return result[0];
+  }
+  //otherwise it returns result array
+  return result;
 }
 
 /* 8. Split an array into chunked arrays of a specific length
@@ -160,4 +202,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(fizzBuzz());
+console.log(longestWord("Hi there, my name is Brad"));
