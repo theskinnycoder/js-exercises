@@ -312,11 +312,22 @@ function sortByHeight() {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters() {
+  let ans;
+  let first = arguments[0].charCodeAt(0);
+  for (let i = 0; i < arguments[0].length; i++) {
+    if (first === arguments[0].charCodeAt(i)) {
+      first++;
+    } else {
+      return String.fromCharCode(first);
+    }
+  }
+  return ans;
+}
 
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
 function evenOddSums() {}
 
-console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]));
+console.log(missingLetters("abce"));
