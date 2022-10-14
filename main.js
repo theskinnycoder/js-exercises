@@ -36,7 +36,26 @@ function reverseInt(num) {
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+  let ans = "",
+    j = 0;
+  let len = str.length;
+  for (let i = 0; i < len; i++) {
+    if (j === 0) {
+      ans = ans + str[i].toUpperCase();
+      j = 1;
+    } else {
+      while (str[i] !== " " && i < len) {
+        ans = ans + str[i];
+        i++;
+      }
+      ans = ans + " ";
+      j = 0;
+    }
+  }
+
+  return ans;
+}
 
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
@@ -108,4 +127,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(reverseInt(521));
+console.log(capitalizeWords("i love javascript"));
