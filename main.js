@@ -23,7 +23,15 @@ function isPalindrome(str) {
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
-function reverseInt(num) {}
+function reverseInt(num) {
+  let ans = 0;
+  while (num > 0) {
+    let rem = num % 10;
+    ans = ans * 10 + rem;
+    num = Math.floor(num / 10);
+  }
+  return ans;
+}
 
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
@@ -100,4 +108,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(isPalindrome("racecar"));
+console.log(reverseInt(521));
