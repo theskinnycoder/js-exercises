@@ -153,7 +153,20 @@ function longestWord(sen) {
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
  */
-function chunkArray(arr, len) {}
+function chunkArray(arr, len) {
+  let ans = new Array();
+  console.log(arr.length);
+  for (let i = 0; i < arr.length; i++) {
+    let dummy = [];
+    while (dummy.length < len && i < arr.length) {
+      dummy.push(arr[i]);
+      i++;
+    }
+    ans.push(dummy);
+    i = i - 1;
+  }
+  return ans;
+}
 
 /* 9. Take an array of arrays and flatten to a single array
  * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
@@ -202,4 +215,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(longestWord("Hi there, my name is Brad"));
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2));
