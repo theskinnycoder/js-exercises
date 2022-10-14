@@ -184,7 +184,30 @@ function flattenArray(arrays) {
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+  let arr1 = new Array();
+  for (let i in str1) {
+    arr1.push(str1[i]);
+  }
+  arr1.sort();
+  console.log(arr1);
+  let arr2 = new Array();
+  for (let j in str2) {
+    arr2.push(str2[j]);
+  }
+  arr2.sort();
+  console.log(arr2);
+  if (arr1.length !== arr2.length) {
+    return "false";
+  } else {
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return "false";
+      }
+    }
+  }
+  return "true";
+}
 
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
  * ex. 'hello there' === 'Ifmmp UIfsf'
@@ -223,4 +246,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]));
+console.log(isAnagram("elbow", "below"));
