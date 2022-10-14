@@ -171,7 +171,15 @@ function chunkArray(arr, len) {
 /* 9. Take an array of arrays and flatten to a single array
  * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
  */
-function flattenArray(arrays) {}
+function flattenArray(arrays) {
+  let result = new Array();
+  for (let i = 0; i < arrays.length; i++) {
+    for (let j = 0; j < arrays[i].length; j++) {
+      result.push(arrays[i][j]);
+    }
+  }
+  return result;
+}
 
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
@@ -215,4 +223,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2));
+console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]));
