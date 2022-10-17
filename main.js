@@ -359,6 +359,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-//console.log(reverseString("hello"));
-//console.log(reverseStringByForOf("world"));
-console.log(reverseStringByWhile("dummy"));
+console.log(reverseString("hello"));
