@@ -9,6 +9,24 @@ function reverseString(str) {
   return ans;
 }
 
+//by using For Of (where the variable takes the values of a object)
+function reverseStringByForOf(str) {
+  let ans = "";
+  for (let i of str) {
+    ans = i + ans;
+  }
+  return ans;
+}
+
+//by using for loop
+function reverseString(str) {
+  let ans = "";
+  for (let i = 0; i < str.length; i++) {
+    ans = str[i] + ans;
+  }
+  return ans;
+}
+
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
@@ -341,4 +359,6 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(evenOddSums([50, 60, 60, 45, 71]));
+//console.log(reverseString("hello"));
+//console.log(reverseStringByForOf("world"));
+console.log(reverseStringByWhile("dummy"));
