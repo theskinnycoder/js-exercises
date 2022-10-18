@@ -40,10 +40,7 @@ function reverseStringByJoinMethod(str) {
  */
 function isPalindrome(str) {
   let dummy = str;
-  if (reverseString(str) === dummy) {
-    return "true";
-  }
-  return "false";
+  return reverseString(str) === dummy ? true : false;
 }
 
 /* 3. Return an integer in reverse
@@ -367,4 +364,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(reverseStringByJoinMethod("hello"));
+console.log(isPalindrome("racecar"));
