@@ -269,16 +269,20 @@ function addAll() {
  */
 function sumAllPrimes() {
   let sum = 0;
-  for (let i = 2; i <= arguments[0]; i++) {
-    let isPrime = true;
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) {
-        isPrime = false;
-        break;
+  let arr = new Array(arguments[0] + 1);
+  arr.fill(true);
+  arr[0] = false;
+  arr[1] = false;
+  for (let i = 2; i * i <= arguments[0]; i++) {
+    if (arr[i]) {
+      for (let j = i * 2; j <= arguments[0]; j += i) {
+        arr[j] = false;
       }
     }
-    if (isPrime) {
-      sum = sum + i;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      sum += i;
     }
   }
   return sum;
@@ -359,4 +363,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(reverseInt(521));
+console.log(sumAllPrimes(10));
