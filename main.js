@@ -287,7 +287,7 @@ function sumAllPrimes() {
   }
   for (let i in arr) {
     if (arr[i]) {
-      console.log(typeof i);
+      sum += parseInt(i);
     }
   }
   return sum;
@@ -368,4 +368,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(addAll(2, 5, 6, 7));
+console.log(sumAllPrimes(10));
