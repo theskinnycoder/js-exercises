@@ -29,26 +29,21 @@ function reverseString(str) {
 
 //reverseString by using join method and a "for of" loop
 function reverseStringByJoinMethod(str) {
-  let ans = "";
-  let arr = str.split(""); //split the input string into a array
-  arr = arr.reverse(); //reverse the array element
-  return arr.join(""); //join the array into string
+  return str.split("").reverse().join(""); //join the array into string
 }
 
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
 function isPalindrome(str) {
-  let dummy = str;
-  return reverseString(str) === dummy ? true : false;
+  return reverseString(str) === str;
 }
 
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
 function reverseInt(num) {
-  let ans = num.toString(); //without converting the input into string we cannot call reverseString function
-  return parseInt(reverseString(ans));
+  return parseInt(reverseString(num.toString()));
 }
 
 /* 4. Return a string with the first letter of every word capitalized
@@ -73,6 +68,18 @@ function capitalizeWords(str) {
   }
 
   return ans;
+}
+
+function capitalizeWordsbyHigherOrderMethod(str) {
+  let arr = str.split(" ");
+  let ans = new Array();
+  for (let i of arr) {
+    let subarr = i.split("");
+    let ele = subarr[0].toUpperCase();
+    subarr.splice(0, 1, ele);
+    ans.push(subarr.join(""));
+  }
+  return ans.join(" ");
 }
 
 /* 5. Return the character that is most common in a string
@@ -257,11 +264,9 @@ function letterChanges(str) {
  * ex. addAll(2,5,6,7) === 20
  */
 function addAll() {
-  let ans = 0;
-  for (let i = 0; i < arguments.length; i++) {
-    ans += arguments[i];
-  }
-  return ans;
+  return Array.prototype.slice
+    .call(arguments)
+    .reduce((total, a) => total + a, 0);
 }
 
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
@@ -280,9 +285,9 @@ function sumAllPrimes() {
       }
     }
   }
-  for (let i = 0; i < arr.length; i++) {
+  for (let i in arr) {
     if (arr[i]) {
-      sum += i;
+      console.log(typeof i);
     }
   }
   return sum;
@@ -363,4 +368,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(sumAllPrimes(10));
+console.log(addAll(2, 5, 6, 7));
