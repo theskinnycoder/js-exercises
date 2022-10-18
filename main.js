@@ -1,7 +1,7 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {
+function reverseStringByForIn(str) {
   let ans = "";
   for (let i in str) {
     ans = str[i] + ans;
@@ -25,6 +25,14 @@ function reverseString(str) {
     ans = str[i] + ans;
   }
   return ans;
+}
+
+//reverseString by using join method and a "for of" loop
+function reverseStringByJoinMethod(str) {
+  let ans = "";
+  let arr = str.split(""); //split the input string into a array
+  arr = arr.reverse(); //reverse the array element
+  return arr.join(""); //join the array into string
 }
 
 /* 2. Return true if palindrome and false if not
@@ -359,4 +367,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(reverseString("hello"));
+console.log(reverseStringByJoinMethod("hello"));
