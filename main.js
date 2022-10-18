@@ -47,13 +47,8 @@ function isPalindrome(str) {
  * ex. reverseInt(521) === 125
  */
 function reverseInt(num) {
-  let ans = 0;
-  while (num > 0) {
-    let rem = num % 10;
-    ans = ans * 10 + rem;
-    num = Math.floor(num / 10);
-  }
-  return ans;
+  let ans = num.toString(); //without converting the input into string we cannot call reverseString function
+  return parseInt(reverseString(ans));
 }
 
 /* 4. Return a string with the first letter of every word capitalized
@@ -364,4 +359,4 @@ function evenOddSums() {
   return [even_sum, odd_sum];
 }
 
-console.log(isPalindrome("racecar"));
+console.log(reverseInt(521));
