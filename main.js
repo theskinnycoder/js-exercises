@@ -259,7 +259,22 @@ function letterChanges(str) {
   }
   return ans;
 }
-
+function letterChangesByHigherOrderMethod(str) {
+  let arr = str.split("");
+  let ans = arr.map(function (i) {
+    let subans;
+    if (i === " ") {
+      subans = " ";
+    } else {
+      let result = String.fromCharCode(i.charCodeAt(0) + 1);
+      "aeiouAEIOU".indexOf(result) != -1
+        ? (subans = result.toUpperCase())
+        : (subans = result);
+    }
+    return subans;
+  });
+  return ans.join("");
+}
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
  */
@@ -405,4 +420,4 @@ function evenOddSumsByForof() {
   }
   return [even_sum, odd_sum];
 }
-console.log(missingLettersByForof("abcd"));
+console.log(letterChangesByHigherOrderMethod("hello there"));
