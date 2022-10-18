@@ -358,14 +358,27 @@ function missingLetters() {
 function evenOddSums() {
   let even_sum = 0;
   let odd_sum = 0;
-  for (let i = 0; i < arguments[0].length; i++) {
-    if (arguments[0][i] % 2 === 0) {
-      even_sum += arguments[0][i];
-    } else {
-      odd_sum += arguments[0][i];
-    }
+  arguments[0].forEach(function (ele) {
+    ele % 2 === 0 ? (even_sum += ele) : (odd_sum += ele);
+  });
+  return [even_sum, odd_sum];
+}
+function evenOddSumsByForin() {
+  let even_sum = 0;
+  let odd_sum = 0;
+  for (let i in arguments[0]) {
+    arguments[0][i] % 2 === 0
+      ? (even_sum += arguments[0][i])
+      : (odd_sum += arguments[0][i]);
   }
   return [even_sum, odd_sum];
 }
-
-console.log(sumAllPrimes(10));
+function evenOddSumsByForof() {
+  let even_sum = 0;
+  let odd_sum = 0;
+  for (let ele of arguments[0]) {
+    ele % 2 === 0 ? (even_sum += ele) : (odd_sum += ele);
+  }
+  return [even_sum, odd_sum];
+}
+console.log(evenOddSumsByForof([50, 60, 60, 45, 71]));
