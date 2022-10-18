@@ -340,7 +340,6 @@ function sortByHeight() {
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
 function missingLetters() {
-  let ans;
   let first = arguments[0].charCodeAt(0);
   for (let i = 0; i < arguments[0].length; i++) {
     if (first === arguments[0].charCodeAt(i)) {
@@ -349,7 +348,32 @@ function missingLetters() {
       return String.fromCharCode(first);
     }
   }
-  return ans;
+  return undefined;
+}
+//missingLetters function by using for in loop
+function missingLettersByForIn() {
+  let first = arguments[0].charCodeAt(0);
+  for (let i in arguments[0]) {
+    if (arguments[0][i] === String.fromCharCode(first)) {
+      first++;
+    } else {
+      return String.fromCharCode(first);
+    }
+  }
+  return undefined;
+}
+
+//missingLetters function by using for of loop
+function missingLettersByForof() {
+  let first = arguments[0].charCodeAt(0);
+  for (let i of arguments[0]) {
+    if (i === String.fromCharCode(first)) {
+      first++;
+    } else {
+      return String.fromCharCode(first);
+    }
+  }
+  return undefined;
 }
 
 /* 17. Take in an array and return an array of the sums of even and odd numbers
@@ -381,4 +405,4 @@ function evenOddSumsByForof() {
   }
   return [even_sum, odd_sum];
 }
-console.log(evenOddSumsByForof([50, 60, 60, 45, 71]));
+console.log(missingLettersByForof("abcd"));
