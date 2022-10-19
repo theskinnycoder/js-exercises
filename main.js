@@ -279,9 +279,7 @@ function letterChangesByHigherOrderMethod(str) {
  * ex. addAll(2,5,6,7) === 20
  */
 function addAll() {
-  return Array.prototype.slice
-    .call(arguments)
-    .reduce((total, a) => total + a, 0);
+  return [...arguments].reduce((total, a) => total + a, 0);
 }
 
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
@@ -312,7 +310,7 @@ function sumAllPrimes() {
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
 function seekAndDestroy() {
-  let arr = arguments[0];
+  let arr = [...arguments[0]];
   let dummy = new Array();
   let ans = new Array();
   for (let i = 1; i < arguments.length; i++) {
@@ -420,4 +418,4 @@ function evenOddSumsByForof() {
   }
   return [even_sum, odd_sum];
 }
-console.log(letterChangesByHigherOrderMethod("hello there"));
+console.log(addAll(2, 5, 6, 7));
