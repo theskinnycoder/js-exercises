@@ -47,7 +47,21 @@ function reverseInt(num) {
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+  let res = "";
+  if(str == "") return "";
+  if(str[0] >= 'a' && str[0] <= 'z') res = str[0].toUpperCase();
+  else res = str[0]; // leading space or anything
+  for(let i = 1; i < str.length; i++) {
+    if(str[i - 1] == ' ' && str[i] >= 'a' && str[i] <= 'z') {
+      res += str[i].toUpperCase();
+    }
+    else {
+      res += str[i];
+    }
+  }
+  return res;
+}
 
 
 
@@ -150,4 +164,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(reverseInt(521))
+console.log(capitalizeWords("i love hydreabad"))
