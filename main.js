@@ -144,7 +144,18 @@ function longestWord(sen) {
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
  */
-function chunkArray(arr, len) {}
+function chunkArray(arr, len) {
+  let res = [], sub = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(sub.length == len) {
+      res.push(sub);
+      sub = [];
+    }
+    sub.push(arr[i]);
+  }
+  if(sub.length > 0) res.push(sub);
+  return res;
+}
 
 
 
@@ -216,4 +227,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(longestWord('Hi there, my name is Brad'))
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 3))
