@@ -1,7 +1,13 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {}
+function reverseString(str) {
+  let res = "";
+  for(let i = str.length - 1; i >= 0; i--) {
+    res += str[i];
+  }
+  return res;
+}
 
 
 
@@ -121,3 +127,8 @@ function missingLetters() {}
 function evenOddSums() {}
 
 
+
+/**
+ * Console log
+ */
+console.log(reverseString('hello'))
