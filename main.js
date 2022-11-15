@@ -26,7 +26,21 @@ function isPalindrome(str) {
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
-function reverseInt(num) {}
+function reverseInt(num) {
+  let neg = false;
+  if(num < 0) {
+    neg = true;
+    num *= -1;
+  }
+  let res = 0;
+  while(num > 0) {
+    res = res * 10 + (num % 10);
+    num /= 10;
+    num = parseInt(num);
+  }
+  if(neg) res *= -1;
+  return res;
+}
 
 
 
@@ -136,4 +150,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(isPalindrome('racecar'))
+console.log(reverseInt(521))
