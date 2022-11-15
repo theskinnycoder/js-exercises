@@ -125,6 +125,17 @@ function longestWord(sen) {
   // SOLUTION 1 - Return a single longest word
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+  let words = sen.split(' ')
+  let maxLen = 0;
+  words.forEach((word) => maxLen = (maxLen < word.length) ? word.length : maxLen);
+  let longestWords = []
+  words.forEach((word) => {
+    if(word.length === maxLen) longestWords.push(word);
+  }) 
+  if(longestWords.length === 1) {
+    return longestWords[0]
+  }
+  return longestWords
 }
 
 
@@ -205,4 +216,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(fizzBuzz())
+console.log(longestWord('Hi there, my name is Brad'))
