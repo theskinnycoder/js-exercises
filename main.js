@@ -173,7 +173,35 @@ function flattenArray(arrays) {
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+  let freq = new Map();
+  for(let i = 0; i < str1.length; i++) {
+    ch = str1[i];
+    if(freq.has(ch)) {
+      freq.set(ch, freq.get(ch) + 1);
+    }
+    else {
+      freq.set(ch, 1);
+    }
+  }
+  for(let i = 0; i < str2.length; i++) {
+    ch = str2[i];
+    if(freq.has(ch)) {
+      freq.set(ch, freq.get(ch) - 1);
+    }
+    else {
+      return false;
+    }
+  }
+  let r = true;
+  freq.forEach((val, key) => {
+    if(val !== 0) {
+      r = false;
+      return;
+    } 
+  })
+  return r;
+}
 
 
 
@@ -231,4 +259,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
+console.log(isAnagram('below', 'elbow'))
