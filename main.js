@@ -187,4 +187,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(fizzBuzz())
+console.log(maxCharacter('Javascript'))
