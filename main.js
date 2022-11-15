@@ -301,7 +301,12 @@ function sortByHeight(arr) {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters(str) {
+  for(let i = 97; i < 123; i++) {
+    if(!str.includes(String.fromCharCode(i))) return String.fromCharCode(i);
+  }
+  return undefined
+}
 
 
 
@@ -315,4 +320,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]))
+console.log(missingLetters("abcdefghijklmnopqrstuvwxyz"))
