@@ -68,7 +68,30 @@ function capitalizeWords(str) {
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
  */
-function maxCharacter(str) {}
+function maxCharacter(str) {
+  let freq = new Map();
+  let maxCount = 0;
+  for(let i = 0; i < str.length; i++) {
+    if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+      if(freq.has(str[i])) {
+        let newCount = freq.get(str[i]) + 1;
+        freq.set(str[i], newCount);
+        if(newCount > maxCount) {
+          maxCount = newCount;
+        }
+      }
+      else {
+        freq.set(str[i], 1);
+      }
+    }
+  }
+  let chs = [];
+  freq.forEach((val, ch) => {
+    if(val === maxCount) chs.push(ch);
+  })
+  if(chs.length === 1) return chs[0];
+  return chs;
+}
 
 
 
@@ -164,4 +187,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(capitalizeWords("i love hydreabad"))
+console.log(fizzBuzz())
