@@ -268,7 +268,12 @@ function sumAllPrimes(n) {
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
-function seekAndDestroy() {}
+function seekAndDestroy(arr, ...args) {
+  args.forEach(val => {
+    while(arr.indexOf(val) != -1) arr.splice(arr.indexOf(val), 1);
+  })
+  return arr;
+}
 
 
 
@@ -298,4 +303,4 @@ function evenOddSums() {}
 /**
  * Console log
  */
-console.log(sumAllPrimes(10))
+console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6))
