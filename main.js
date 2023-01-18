@@ -42,7 +42,18 @@ function reverseInt(num) {
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+  let ans = ""
+  for(let i=0;i<str.length;i++) {
+    if(i===0 || str[i-1]===' ') {
+      ans+=str[i].toUpperCase()
+    }
+    else{
+      ans+=str[i]
+    }
+  }
+  return ans
+}
 
 
 
@@ -140,6 +151,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(reverseInt(521))
+console.log(capitalizeWords('i love javascript'))
 
 
