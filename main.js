@@ -1,8 +1,13 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {}
-
+function reverseString(str) {
+  let revString = "";
+  for(let i=str.length-1;i>=0;i--) {
+    revString += str[i]
+  }
+  return revString
+}
 
 
 /* 2. Return true if palindrome and false if not
@@ -119,5 +124,7 @@ function missingLetters() {}
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
 function evenOddSums() {}
+
+console.log(reverseString('hello'))
 
 
