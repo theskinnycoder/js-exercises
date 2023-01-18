@@ -60,7 +60,22 @@ function capitalizeWords(str) {
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
  */
-function maxCharacter(str) {}
+function maxCharacter(str) {
+  let charCount = {}
+  for(let i=0;i<str.length;i++) {
+    if(str[i] in charCount){
+      charCount[str[i]]++
+    }
+    else
+      charCount[str[i]] = 1
+  }
+  let ans = str[0]
+  for(const ch in charCount){
+    if (charCount[ch] > charCount[ans])
+      ans = ch
+  }
+  return ans
+}
 
 
 
@@ -151,6 +166,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(capitalizeWords('i love javascript'))
+console.log(maxCharacter('javascript'))
 
 
