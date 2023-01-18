@@ -1,7 +1,14 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {}
+function reverseString(str) {
+  let reversedString = ""
+
+  for (let i = str.length; i >= 0 ; i--) {
+    reversedString += str[i];
+  }
+  return reversedString
+}
 
 
 
@@ -119,5 +126,7 @@ function missingLetters() {}
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
 function evenOddSums() {}
+
+reverseString("alap alap")
 
 
