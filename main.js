@@ -26,7 +26,8 @@ isPalindrome("mam")
 * ex. reverseInt(521) === 125
 */
 function reverseInt(num) {
-
+  let strInt = num.toString();
+  return reverseString
 }
 
 
