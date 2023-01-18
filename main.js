@@ -1,9 +1,11 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {}
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
 
-
+reverseString("hellobla");
 
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
