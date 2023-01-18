@@ -16,7 +16,7 @@ function reverseString(str) {
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
 function isPalindrome(str) {}
-
+  
 
 
 /* 3. Return an integer in reverse
@@ -128,5 +128,3 @@ function missingLetters() {}
 function evenOddSums() {}
 
 reverseString("alap alap")
-
-
