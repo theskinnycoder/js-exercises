@@ -13,7 +13,14 @@ function reverseString(str) {
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  let Mid = parseInt(str.length/2);
+  for(let i=0;i<Mid;i++) {
+    if(str[i] !== str[str.length-i-1])
+      return false;
+  }
+  return true
+}
 
 
 
@@ -125,6 +132,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(reverseString('hello'))
+console.log(isPalindrome('racecar'), isPalindrome('hello'))
 
 
