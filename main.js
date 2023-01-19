@@ -53,10 +53,22 @@ function capitalizeWords(str) {
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
  */
-function maxCharacter(str) {}
+function maxCharacter(str) {
+    const charMapping={};
+    let max=0;
+    let maxChar='';
+    for(let i of str){
+      charMapping[i]=charMapping[i]+1||1;
+    }
+    for(let i in charMapping){
+      if(charMapping[i]>max){
+        max=charMapping[i];
+        maxChar=i;
+      }
+    }
+    return maxChar;
 
-
-
+}
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
 function fizzBuzz() {}
 
