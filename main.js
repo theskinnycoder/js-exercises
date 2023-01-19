@@ -111,7 +111,7 @@ function longestWord(sen) {
   // SOLUTION 1 - Return a single longest word
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
-
+ 
   const wordsArr = sen.split(" ")
   
   // Solution 1 =>
@@ -153,7 +153,18 @@ function longestWord(sen) {
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
  */
-function chunkArray(arr, len) {}
+function chunkArray(arr, len) {
+  var temp = []
+  var ans = []
+  for (x = 0; x < arr.length; x++){
+    temp.push(arr[x])
+    if ((x + 1) % len == 0 || x == arr.length - 1) {
+      ans.push(temp)
+      temp = []
+    }
+  }
+  return ans
+}
 
 
 
@@ -220,5 +231,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-
-console.log(longestWord("hi i h"))
+console.log(chunkArray([1, 2, 3, 4, 5], 3))
