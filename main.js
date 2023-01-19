@@ -24,7 +24,13 @@ function isPalindrome(str) {
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
-function reverseInt(num) {}
+function reverseInt(num) {
+  num=num.toString();
+  rev=num.split("").reverse().join("");
+  rev=parseInt(rev);
+  return rev;
+}
+
 
 
 
