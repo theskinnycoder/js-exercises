@@ -19,7 +19,7 @@ function isPalindrome(str) {
 
   let i = 0
   let j = str.length - 1
-  
+
   while (i <= j) {
     if (str[i] != str[j]){
       return false
@@ -35,20 +35,28 @@ function isPalindrome(str) {
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
-function reverseInt(num) {}
+function reverseInt(num) {
+  let s = num.toString()
+  return reverseString(s)
+}
 
 
 
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+  const wordsArr = str.split(" ")
 
-
-
+  for (let i = 0; i < wordsArr.length; i++){
+    wordsArr[i] = wordsArr[i].charAt(0).toUpperCase() + wordsArr[i].slice(1)
+  }
+  return wordsArr.join(" ")
+}
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
  */
+
 function maxCharacter(str) {}
 
 
@@ -140,7 +148,5 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-// console.log(isPalindrome("palap"))
-// console.log(isPalindrome("none"))
-isPalindrome("papap")
-isPalindrome("momo")
+console.log(capitalizeWords("puvi is at apxor"))
+// console.log(reverseInt(123))
