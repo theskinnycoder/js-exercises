@@ -5,8 +5,6 @@ function reverseString(str) {
   return str.split("").reverse().join("");
 }
 
-x=reverseString("india");
-console.log(x);
 
 
 /* 2. Return true if palindrome and false if not
