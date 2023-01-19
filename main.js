@@ -257,7 +257,14 @@ function sortByHeight() {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters() {
+  let size = arguments[0].length
+  for(let i=97; size!==0; size--,i++ ){
+    if(arguments[0].indexOf(String.fromCharCode(i)) === -1 ){
+      return String.fromCharCode(i)
+    }
+  }
+}
 
 
 
@@ -266,6 +273,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]))
+console.log(missingLetters("abce"), missingLetters("abcdefghjklmno"), missingLetters("abcdefghijklmnopqrstuvwxyz"))
 
 
