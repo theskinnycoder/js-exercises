@@ -2,21 +2,19 @@
  * ex. reverseString('hello') === 'olleh'
  */
 function reverseString(str) {
-  return str.split("").reverse().join("");
+  return str.split("").reverse().join("")
 }
 
-reverseString("helloblaaaaa");
+reverseString("hellob laaaa a")
 
 /* 2. Return true if palindrome and false if not
 * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
 */
 function isPalindrome(str) {
-  if (str === reverseString(str)) {
+  if (str === reverseString(str))
       return true
-  }
-  else {
-      return false
-  }
+  else
+      return false    
 }
 
 isPalindrome("mam")
@@ -26,23 +24,40 @@ isPalindrome("mam")
 * ex. reverseInt(521) === 125
 */
 function reverseInt(num) {
-  let strInt = num.toString();
-  return reverseString
+let strInt = num.toString()
+return reverseString(strInt)
 }
 
-
+reverseInt(36874)
 
 /* 4. Return a string with the first letter of every word capitalized
 * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
 */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+newStr = str[0].toUpperCase()
+let i = 1
+while (i < str.length) {
+  if (str[i] === " ") {
+    newStr += " " + str[i + 1].toUpperCase()
+    i++
+  }
+  else
+    newStr += str[i]
+  i++
+}
+return newStr
+}
 
-
+capitalizeWords("poo peepeep poo")
 
 /* 5. Return the character that is most common in a string
 * ex. maxCharacter('javascript') == 'a'
 */
-function maxCharacter(str) {}
+
+function maxCharacter(str) {
+  
+
+}
 
 
 
