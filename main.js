@@ -146,7 +146,24 @@ function flattenArray(arrays) {
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+  let charCount = {}
+  for(let i=0;i<str1.length;i++) {
+    if(str1[i] in charCount)
+      charCount[str1[i]] ++
+    else 
+      charCount[str1[i]] = 1
+  }
+  for(let i=0;i<str2.length;i++) {
+    if(str2[i] in charCount && charCount[str2[i]]!==0)
+      charCount[str2[i]] -- 
+    else
+      return false
+  }
+  if(str1.length === str2.length)
+    return true
+  return false
+}
 
 
 
@@ -199,6 +216,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
+console.log(isAnagram('elbow', 'below'))
 
 
