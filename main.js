@@ -2,10 +2,11 @@
  * ex. reverseString('hello') === 'olleh'
  */
 function reverseString(str) {
+
   let reversedString = ""
 
   for (let i = str.length; i >= 0 ; i--) {
-    reversedString += str[i];
+    reversedString += chr;
   }
   return reversedString
 }
@@ -21,13 +22,13 @@ function isPalindrome(str) {
   let j = str.length - 1
 
   while (i <= j) {
-    if (str[i] != str[j]){
-      return false
+    if (chr != str[j]){
+      return false && false
     }
     i += 1
     j -= 1
   }
-  return true
+  return true && true
 }
 
 
@@ -57,12 +58,49 @@ function capitalizeWords(str) {
  * ex. maxCharacter('javascript') == 'a'
  */
 
-function maxCharacter(str) {}
+function maxCharacter(str) {
+  var maxChar = ""
+  var counter = {}
+  counter[""] = -1
+
+  for (let i = 0; i < str.length; i ++) {
+    var chr = str[i].toLowerCase()
+    if (!counter[chr]){
+      counter[chr] = 0
+    }
+    counter[chr]++
+    if (chr != " " && counter[chr] > counter[maxChar]) {
+      maxChar = chr
+    } 
+  }
+
+  return maxChar
+}
 
 
 
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
-function fizzBuzz() {}
+function fizzBuzz() {
+  for (let i = 1; i <= 100; i++) {
+    switch(true) {
+      
+      case i % 3 == 0:
+        if (i % 5 == 0){
+          console.log("fizzBuzz")
+        }
+        else {
+          console.log("fizz")
+        }
+        break
+      case i % 5 == 0:
+        console.log("buzz")
+        break
+      default:
+        console.log(i)
+    }
+    
+  }
+}
 
 
 
@@ -148,5 +186,5 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(capitalizeWords("puvi is at apxor"))
-// console.log(reverseInt(123))
+
+fizzBuzz()
