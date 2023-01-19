@@ -135,12 +135,12 @@ function longestWord(sen) {
       ansArr.push(key)
     }
   }
-  console.log("Solution 2 : ", wordsArr)
+  console.log("Solution 2 : ", ansArr)
 
   //Solution 3 =>
 
-  if (wordsArr.length > 1) {
-    console.log("Solution 3 : ", wordsArr)
+  if (ansArr.length > 1) {
+    console.log("Solution 3 : ", ansArr)
   }
   else {
     console.log("Solution 3 : ", maxWord)
@@ -221,4 +221,4 @@ function missingLetters() {}
 function evenOddSums() {}
 
 
-console.log(longestWord("hi i oh"))
+console.log(longestWord("hi i h"))
