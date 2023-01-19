@@ -11,6 +11,13 @@ function reverseString(str) {
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
 function isPalindrome(str) {
+  rev=str.split("").reverse().join("");
+  if (rev==str){
+     return true;
+  }
+  else{
+     return false;
+  }
    
   
 }
