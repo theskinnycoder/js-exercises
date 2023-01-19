@@ -201,16 +201,35 @@ function addAll() {
 
 
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
- * ex. sumAllPrimes(10) == 17
+ * ex. sumAllPrimes(10) == 17 
  */
-function sumAllPrimes() {}
+function sumAllPrimes() {
+  let ans = 0
+  for(let i=2;i<arguments[0];i++) {
+    let k = true
+    for(let j=2;j<=Math.sqrt(i);j++) {
+      if(i%j === 0){
+        k = false
+        break
+      }
+    }
+    if(k) 
+      ans+=i
+  }
+  return ans
+}
 
 
 
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
-function seekAndDestroy() {}
+function seekAndDestroy() {
+  let arr = arguments[0]
+  for(let i=1;i<arguments.length;i++) 
+    arr = arr.filter(ele => ele!=arguments[i])
+  return arr
+}
 
 
 
@@ -235,6 +254,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(addAll(2,5,6,7))
+console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6))
 
 
