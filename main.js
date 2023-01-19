@@ -53,12 +53,23 @@ capitalizeWords("poo peepeep poo")
 /* 5. Return the character that is most common in a string
 * ex. maxCharacter('javascript') == 'a'
 */
-
 function maxCharacter(str) {
-  
-
+  const aMap = {}
+  let maxCount = 0
+  let maxChar = ""
+  for (let char of str) {
+    aMap[char] = aMap[char] + 1 || 1
+  }
+  for (let key in aMap) {
+    if (aMap[key] > maxCount) {
+      maxCount = aMap[key]
+      maxChar = key
+    }
+  }
+  return maxChar
 }
 
+maxCharacter("bbinuudddu")
 
 
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
