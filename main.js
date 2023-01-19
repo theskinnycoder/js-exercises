@@ -170,7 +170,21 @@ function isAnagram(str1, str2) {
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
  * ex. 'hello there' === 'Ifmmp UIfsf'
  */
-function letterChanges(str) {}
+function letterChanges(str) {
+  let ans = ""
+  for(let i=0;i<str.length;i++) {
+    if(!str[i].toString().match(/[a-z]/i)) {
+      ans+=str[i]
+      continue
+    }
+    let nextChar = String.fromCharCode(str[i].charCodeAt() + 1)
+    if(str[i] === 'z') nextChar = 'a'
+    if( ['A','E','I','O','U'].indexOf(nextChar.toUpperCase()) !== -1)
+      ans += nextChar.toUpperCase()
+    else  ans+=nextChar
+  }
+  return ans
+}
 
 
 
@@ -216,6 +230,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(isAnagram('elbow', 'below'))
+console.log(letterChanges('hello there'))
 
 
