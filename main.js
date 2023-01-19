@@ -273,7 +273,7 @@ function missingLetters() {
  */
 function evenOddSums() {
   let ans = [0, 0]
-  for(i of arguments) {
+  for(i of arguments[0]) {
     if (i%2 === 0) 
       ans[0] += i
     else
