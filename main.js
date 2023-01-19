@@ -37,8 +37,14 @@ function reverseInt(num) {
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
-
+function capitalizeWords(str) {
+    var arr=str.split(" ");
+    for(var i=0;i<arr.length;i++){
+        arr[i]=arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    var arr2=arr.join(" ");
+    return arr2;
+}
 
 
 /* 5. Return the character that is most common in a string
