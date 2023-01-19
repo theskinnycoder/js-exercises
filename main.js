@@ -82,8 +82,8 @@ function maxCharacter(str) {
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
 function fizzBuzz() {
   for (let i = 1; i <= 100; i++) {
+
     switch(true) {
-      
       case i % 3 == 0:
         if (i % 5 == 0){
           console.log("fizzBuzz")
@@ -111,6 +111,40 @@ function longestWord(sen) {
   // SOLUTION 1 - Return a single longest word
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+
+  const wordsArr = sen.split(" ")
+  
+  // Solution 1 =>
+  function solutionOne(wordsArr, maxWord) {
+    for (i = 0; i < wordsArr.length; i++) {
+      if (wordsArr[i].length > maxWord.length) {
+        maxWord = wordsArr[i]
+      }
+    }
+    return maxWord
+  }
+  var maxWord = solutionOne(wordsArr, "")
+  console.log(`Solution 1 : ${maxWord}`)
+
+  // Solution 2 =>
+  
+  const ansArr = []
+  for (i = 0; i < wordsArr.length; i++) {
+    key = wordsArr[i]
+    if (key.length == maxWord.length && !ansArr.includes(key)) {
+      ansArr.push(key)
+    }
+  }
+  console.log("Solution 2 : ", wordsArr)
+
+  //Solution 3 =>
+
+  if (wordsArr.length > 1) {
+    console.log("Solution 3 : ", wordsArr)
+  }
+  else {
+    console.log("Solution 3 : ", maxWord)
+  }
 }
 
 
@@ -187,4 +221,4 @@ function missingLetters() {}
 function evenOddSums() {}
 
 
-fizzBuzz()
+console.log(longestWord("hi i oh"))
