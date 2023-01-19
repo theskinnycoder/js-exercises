@@ -26,6 +26,10 @@ function isPalindrome(str) {
  * ex. reverseInt(521) === 125
  */
 function reverseInt(num) {
+  num=num.toString();
+  rev=num.split("").reverse().join("");
+  rev=parseInt(rev);
+  return rev;
   
 }
 
