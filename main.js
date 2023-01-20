@@ -292,13 +292,21 @@ function sortByHeight(arr) {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
-
-
-
+function missingLetters(str) {
+  let code = 97
+  let x = 0
+  let res = ""
+  while (code <= 122 || x < str.length) {
+    console.log(code, x, res)
+    if (str[x] == String.fromCharCode(code)) {x++; code++}
+    else {res += String.fromCharCode(code); code++}
+  }
+  if (!res){return undefined}
+  return res
+}
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
 function evenOddSums() {}
 
-console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]))
+console.log(missingLetters("abcde"))
