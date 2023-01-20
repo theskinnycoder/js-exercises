@@ -150,9 +150,13 @@ function chunkArray(arr, len) {
 /* 9. Take an array of arrays and flatten to a single array
 * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
 */
-function flattenArray(arrays) {}
+function flattenArray(arrays) {
+  let flatArray = []
+  arrays.forEach((array) => {array.forEach((num) => flatArray.push(num))})
+  return flatArray
+}
 
-
+console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
 
 /* 10. Return true if anagram and false if not
 * ex. isAnagram('elbow', 'below') === true
