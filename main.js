@@ -237,9 +237,15 @@ function sortByHeight() {}
 * ex. missingLetters("abcdefghjklmno") == "i"
 * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
 */
-function missingLetters() {}
+function missingLetters(str) {
+  for(let i = 97; i < 123; i++) {
+    if(!str.includes(String.fromCharCode(i))) 
+      return String.fromCharCode(i)
+  }
+  return
+}
 
-
+//console.log(missingLetters("abcdefghijklmnopqrstuvwxyz"))
 
 /* 17. Take in an array and return an array of the sums of even and odd numbers
 * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
