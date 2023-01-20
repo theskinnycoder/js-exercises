@@ -245,7 +245,18 @@ function missingLetters() {}
 * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
 */
 function evenOddSums(list) {
+  let even = 0
+  let odd = 0
+  let i = 0
   
+  while(i < list.length) {
+    if(list[i] % 2)
+      odd += list[i]
+    else
+      even += list[i]
+    i++
+  }
+  return [even, odd]
 }
 
 //console.log(evenOddSums([50, 60, 60, 45, 71]))
