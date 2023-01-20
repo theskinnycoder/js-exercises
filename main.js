@@ -210,8 +210,23 @@ function addAll(...args) {
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
 * ex. sumAllPrimes(10) == 17
 */
-function sumAllPrimes() {}
 
+function isPrime(num) {
+  for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+      if(num % i === 0) 
+        return false
+  }
+  return num > 1;
+}
+
+function sumAllPrimes(end) {
+  let summ = 0
+  for (let x = 2; x <= end; x++){
+    if (isPrime(x)) 
+      summ += x
+  }
+  return summ
+}
 
 
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
