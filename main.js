@@ -156,13 +156,16 @@ function flattenArray(arrays) {
   return flatArray
 }
 
-console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
+//console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
 
 /* 10. Return true if anagram and false if not
 * ex. isAnagram('elbow', 'below') === true
 */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+  return (str1.split('').sort().join('') === str2.split('').sort().join(''))
+}
 
+console.log(isAnagram('elbow', 'below'))
 
 
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
