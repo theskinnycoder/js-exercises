@@ -257,7 +257,13 @@ function sumAllPrimes(end) {
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
-function seekAndDestroy() {}
+function seekAndDestroy(arr,...rem) {
+  let ans = []
+  arr.forEach(element => {
+    if (!rem.includes(element)) {ans.push(element)}
+  });
+  return ans
+}
 
 
 
@@ -282,5 +288,5 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(sumAllPrimes(10))
+console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6))
 
