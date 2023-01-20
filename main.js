@@ -5,7 +5,7 @@ function reverseString(str) {
   return str.split("").reverse().join("")
 }
 
-reverseString("hellob laaaa a")
+//console.log(reverseString("hellob laaaa a"))
 
 /* 2. Return true if palindrome and false if not
 * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
@@ -17,7 +17,7 @@ function isPalindrome(str) {
       return false    
 }
 
-isPalindrome("mam")
+//console.log(isPalindrome("mam"))
 
 
 /* 3. Return an integer in reverse
@@ -28,7 +28,7 @@ let strInt = num.toString()
 return reverseString(strInt)
 }
 
-reverseInt(36874)
+//reverseInt(36874)
 
 /* 4. Return a string with the first letter of every word capitalized
 * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
@@ -48,7 +48,7 @@ while (i < str.length) {
 return newStr
 }
 
-capitalizeWords("poo peepeep poo")
+//capitalizeWords("poo peepeep poo")
 
 /* 5. Return the character that is most common in a string
 * ex. maxCharacter('javascript') == 'a'
@@ -69,12 +69,27 @@ function maxCharacter(str) {
   return maxChar
 }
 
-maxCharacter("bbinuudddu")
-
+//console.log(maxCharacter("bbinuudddddu"))
 
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
-function fizzBuzz() {}
+function fizzBuzz() {
+  for (let i = 1; i < 101; i++) {
+    if (i === 3 || i % 3 === 0) {
+       console.log("Fizz")
+    }
+    else if (i === 5 || i % 5 === 0) {
+      console.log("Buzz")
+    }
+    else if ( i % 3 === 0 && i % 5 === 0){
+      console.log("FizzBuzz")
+    }
+    else {
+      console.log(i)
+    }
+  }
+}
 
+fizzBuzz()
 
 
 /* 7. Return the longest word of a string
