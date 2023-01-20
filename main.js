@@ -5,8 +5,8 @@ function reverseString(str) {
 
   let reversedString = ""
 
-  for (let i = str.length; i >= 0 ; i--) {
-    reversedString += chr;
+  for (let i = str.length - 1; i >= 0 ; i--) {
+    reversedString += str[i];
   }
   return reversedString
 }
@@ -22,13 +22,13 @@ function isPalindrome(str) {
   let j = str.length - 1
 
   while (i <= j) {
-    if (chr != str[j]){
-      return false && false
+    if (str[i] != str[j]){
+      return false
     }
     i += 1
     j -= 1
   }
-  return true && true
+  return true
 }
 
 
@@ -81,23 +81,42 @@ function maxCharacter(str) {
 
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
 function fizzBuzz() {
+  var x = 3
+  var y = 5
+  function checkDiv(num, div) {
+    return num % div == 0
+  }
   for (let i = 1; i <= 100; i++) {
-
     switch(true) {
-      case i % 3 == 0:
-        if (i % 5 == 0){
-          console.log("fizzBuzz")
-        }
-        else {
-          console.log("fizz")
-        }
+      case checkDiv(i, x) && checkDiv(i, y):
+        console.log("fizzBuzz")
         break
-      case i % 5 == 0:
+      case checkDiv(i, x):
+        console.log("fizz")
+        break
+      case checkDiv(i, y):
         console.log("buzz")
         break
       default:
         console.log(i)
     }
+    
+
+    // switch(true) {
+    //   case i % 3 == 0:
+    //     if (i % 5 == 0){
+    //       console.log("fizzBuzz")
+    //     }
+    //     else {
+    //       console.log("fizz")
+    //     }
+    //     break
+    //   case i % 5 == 0:
+    //     console.log("buzz")
+    //     break
+    //   default:
+    //     console.log(i)
+    // }
     
   }
 }
@@ -173,8 +192,6 @@ function chunkArray(arr, len) {
  */
 function flattenArray(arrays) {}
 
-
-
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
@@ -192,14 +209,14 @@ function letterChanges(str) {}
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
  */
-function addAll() {}
+function addAll(...arr) {}
 
 
 
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
  * ex. sumAllPrimes(10) == 17
  */
-function sumAllPrimes() {}
+function sumAllPrimes(end) {}
 
 
 
@@ -231,4 +248,6 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(chunkArray([1, 2, 3, 4, 5], 3))
+// console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
+// console.log(letterChanges('hello there'))4
+console.log(sumAllPrimes(10))
