@@ -217,8 +217,12 @@ function sumAllPrimes() {}
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
 * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
 */
-function seekAndDestroy() {}
+function seekAndDestroy(arr, ...args) {
+  args.forEach(argy => {while(arr.indexOf(argy) != -1) arr.splice(arr.indexOf(argy), 1)})
+  return arr
+}
 
+//console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6))
 
 
 /* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
@@ -240,6 +244,8 @@ function missingLetters() {}
 /* 17. Take in an array and return an array of the sums of even and odd numbers
 * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
 */
-function evenOddSums() {}
+function evenOddSums(list) {
+  
+}
 
-
+//console.log(evenOddSums([50, 60, 60, 45, 71]))
