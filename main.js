@@ -227,7 +227,13 @@ function letterChanges(str) {
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
  */
-function addAll(...arr) {}
+function addAll(...arr) {
+  let sum = 0
+  arr.forEach(x => {
+    sum += x
+  });
+  return sum
+}
 
 
 
@@ -266,6 +272,5 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-// console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
-console.log(letterChanges('hello there'))
-// console.log(letterChanges("hello world"))
+console.log(addAll(1,2,3,4))
+
