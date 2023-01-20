@@ -285,6 +285,24 @@ function missingLetters(str) {
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
-function evenOddSums() {}
+function evenOddSums(arr) {
+  var evenSum=0;
+  var oddSum=0;
+  var finalList=[]
+  for(i=0;i<arr.length;i++){
+    if(arr[i]%2==0){
+      evenSum=evenSum+arr[i];
+
+    }
+    else{
+      oddSum=oddSum+arr[i];
+    }
+  }
+  finalList.push(evenSum);
+  finalList.push(oddSum);
+  return finalList;
+
+}
+
 
 
