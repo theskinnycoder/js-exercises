@@ -89,7 +89,7 @@ function fizzBuzz() {
   }
 }
 
-fizzBuzz()
+//fizzBuzz()
 
 
 /* 7. Return the longest word of a string
@@ -99,8 +99,24 @@ function longestWord(sen) {
 // SOLUTION 1 - Return a single longest word
 // SOLUTION 2 - Return an array and include multiple words if they have the same length
 // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+  let words = sen.split(" ")
+  let maxLen = 0
+  //array.forEach(callback, thisObject)
+  words.forEach((word) => {
+    maxLen = (maxLen < word.length) ? word.length : maxLen
+    //maxLenWord = word
+  })
+  let resultArray = [];
+  words.forEach((word) => { maxLenWord = (maxLen === word.length) ? word : ""
+    if (maxLenWord !== "")
+      resultArray.push(maxLenWord)
+  })
+  let res = (resultArray.length === 1) ? resultArray[0] : resultArray
+  return res
 }
 
+console.log(longestWord("Hi there, my namwce is Bjhrad"))
+console.log(longestWord("Hi there, my name is Brad"))
 
 
 /* 8. Split an array into chunked arrays of a specific length
