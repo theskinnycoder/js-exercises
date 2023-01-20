@@ -215,10 +215,17 @@ function sumAllPrimes(num) {
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
-function seekAndDestroy() {}
-
-
-
+function seekAndDestroy(arr) {
+  var l=arr[0];
+  var l2=arr.slice(1);
+  var l3=[];
+  for (i=0;i<l.length;i++){
+    if (!(l2.includes(l[i]))){
+      l3.push(l[i]);
+    }
+  }
+  return l3;
+}
 /* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
  * ex. sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) == [-1, 150, 160, 170, -1, -1, 180, 190]
  */
