@@ -259,7 +259,26 @@ function sortByHeight(arr) {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters(str) {
+  //str[i].charCodeAt()
+  s='';
+  var l=str.length;
+  var l=l-1;
+  for(var i=0;i<l;i++){
+    if (((str[i].charCodeAt()+1))!=(str[i+1].charCodeAt())){
+      let ss=str[i].charCodeAt();
+      s=String.fromCharCode(ss+1);
+    //s= String.fromCharCode(str[i].charCodeAt());
+    }
+  if (s==''){
+    s='undefined';
+  }
+
+  }
+  return s;
+}
+
+
 
 
 
