@@ -146,7 +146,17 @@ function flattenArray(arrays) {
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+
+  let a = str1.split('').sort().join('');
+  let b = str2.split('').sort().join('');
+  if(a==b){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 
 
