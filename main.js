@@ -267,10 +267,23 @@ function seekAndDestroy(arr,...rem) {
 
 
 
-/* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
+/* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved.
+       Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
  * ex. sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) == [-1, 150, 160, 170, -1, -1, 180, 190]
  */
-function sortByHeight() {}
+function sortByHeight(arr) {
+  let res = []
+  let i = 0
+  arr.forEach(element => { if (element != -1) {res.push(element)}})
+  res = res.sort()
+  for (let x = 0; x < arr.length; x++) {
+    if (arr[x] != -1) {
+      arr[x] = res[i];
+      i++
+    }
+  }
+  return arr
+}
 
 
 
@@ -288,5 +301,4 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6))
-
+console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]))
