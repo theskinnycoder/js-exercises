@@ -243,9 +243,16 @@ function seekAndDestroy(arr, ...args) {
 /* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
 * ex. sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) == [-1, 150, 160, 170, -1, -1, 180, 190]
 */
-function sortByHeight() {}
+function sortByHeight(arr) {
+  let nums = []
+  for(let i = 0; i < arr.length; i++) if(arr[i] !== -1) {nums.push(arr[i])}
+  nums.sort()
 
+  for(let i = 0, j = 0; i < arr.length; i++) {if(arr[i] !== -1) arr[i] = nums[j++]}
+  return arr
+}
 
+//console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]))
 
 /* 16. Find the missing letter in the passed letter range and return it. If all letters are present, return undefined
 * ex. missingLetters("abce") == "d"
