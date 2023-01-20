@@ -184,10 +184,15 @@ function letterChanges(str){
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
  */
-function addAll() {}
+function addAll() {
+  var sum1=0;
+  for(var i=0;i<arguments.length;i++){
+    sum1+=arguments[i];
 
+  }
+  return sum1;
 
-
+}
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
  * ex. sumAllPrimes(10) == 17
  */
