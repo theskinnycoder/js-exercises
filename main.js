@@ -115,17 +115,37 @@ function longestWord(sen) {
   return res
 }
 
-console.log(longestWord("Hi there, my namwce is Bjhrad"))
-console.log(longestWord("Hi there, my name is Brad"))
+// console.log(longestWord("Hi there, my namwce is Bjhrad"))
+// console.log(longestWord("Hi there, my name is Brad"))
 
 
 /* 8. Split an array into chunked arrays of a specific length
 * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
 * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
 */
-function chunkArray(arr, len) {}
+function chunkArray(arr, len) {
+  let subArr = []
+  let resultArray = []
 
+  for(let i = 0; i < arr.length; i++) {
+    if(subArr.length === len) {
+      resultArray.push(subArr)
+      subArr = []
+    }
+    subArr.push(arr[i])
+  }
+  // add last sub array too
+  if (subArr.length > 0) 
+    resultArray.push(subArr)
+  
+    resultArray.forEach((resArr) => {
+    console.log(resArr)
+  })
 
+  return resultArray
+}
+
+//console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))
 
 /* 9. Take an array of arrays and flatten to a single array
 * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
