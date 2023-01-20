@@ -179,7 +179,7 @@ function letterChanges(str) {
       
       if(['a', 'e', 'i', 'o', 'u'].includes(ch)) 
         ch = ch.toUpperCase()
-
+        
       if(ch == '{') ch = 'A'
       res += ch
     }
@@ -189,12 +189,21 @@ function letterChanges(str) {
   return res
 }
 
+//console.log(letterChanges("hello there"))
 
 
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
 * ex. addAll(2,5,6,7) === 20
 */
-function addAll() {}
+function addAll(...args) {
+  let summ = 0;
+  for(let i = 0; i < args.length; i++) {
+    summ += args[i];
+  }
+  return summ;
+}
+
+//console.log(addAll(3, 4, 5, 6, 4, 5, 6))
 
 
 
