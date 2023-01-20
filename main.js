@@ -206,7 +206,21 @@ function isAnagram(str1, str2) {
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
  * ex. 'hello there' === 'Ifmmp UIfsf'
  */
-function letterChanges(str) {}
+function letterChanges(str) {
+  let ans = ""
+  str.split("").forEach(x => {
+
+    let c = x.charCodeAt(0)
+    let temp = ""
+    if (c == 90) {temp = 'A'}
+    else if (c == 122) {temp = 'a'}
+    else if (c == 32) {temp = ' '}
+    else {temp = String.fromCharCode(++c)}
+    if (/[aeiou]/.test(temp)) {temp = temp.toUpperCase()}
+    ans += temp
+  });
+  return ans
+}
 
 
 
@@ -253,5 +267,5 @@ function missingLetters() {}
 function evenOddSums() {}
 
 // console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
-// console.log(letterChanges('hello there'))4
-console.log(isAnagram('elbow', 'below'))
+console.log(letterChanges('hello there'))
+// console.log(letterChanges("hello world"))
