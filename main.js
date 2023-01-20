@@ -240,7 +240,17 @@ function addAll(...arr) {
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
  * ex. sumAllPrimes(10) == 17
  */
-function sumAllPrimes(end) {}
+function sumAllPrimes(end) {
+  let sum = 0
+  function isPrime(num) {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+        if(num % i === 0) return false;
+    }
+    return num > 1;
+  }
+  for (let x = 2; x <= end; x++) {if (isPrime(x)) {sum += x}}
+  return sum
+}
 
 
 
@@ -272,5 +282,5 @@ function missingLetters() {}
  */
 function evenOddSums() {}
 
-console.log(addAll(1,2,3,4))
+console.log(sumAllPrimes(10))
 
