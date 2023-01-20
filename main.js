@@ -307,6 +307,13 @@ function missingLetters(str) {
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
-function evenOddSums() {}
+function evenOddSums(arr) {
+  let res= [0, 0]
+  arr.forEach(num => {
+    if (num % 2 == 0) {res[0] += num}
+    else {res[1] += num}
+  });
+  return res
+}
 
-console.log(missingLetters("abcde"))
+console.log(evenOddSums([50, 60, 60, 45, 71, 2]))
