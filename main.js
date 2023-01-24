@@ -34,15 +34,25 @@ function capitalizeWords(str) {
   }
   return words.join(' ')
 }
-// console.log(capitalizeWords('i love javascript'));
 
 
 
 /* 5. Return the character that is most common in a string
- * ex. maxCharacter('javascript') == 'a'
- */
-function maxCharacter(str) {}
-
+* ex. maxCharacter('javascript') == 'a'
+*/
+function maxCharacter(str) {
+  let letters = {};
+  str = str.split('')
+  for (let i=0; i<str.length; i++) {
+    if(letters[str[i]]){
+      letters[str[i]] += 1;
+    } else {
+      letters[str[i]] = 1;
+    }
+  }
+  
+  return Object.entries(letters).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+}
 
 
 // 6. Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
