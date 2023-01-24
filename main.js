@@ -9,8 +9,10 @@ function reverseString(str) {
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
-function isPalindrome(str) {}
-
+function isPalindrome(str) {
+  return (str.split('').reverse().join('')===str) ? true : false;
+}
+console.log(isPalindrome('racecr'));
 
 
 /* 3. Return an integer in reverse
