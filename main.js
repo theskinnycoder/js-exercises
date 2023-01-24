@@ -46,6 +46,12 @@ function longestWord(sen) {
   // SOLUTION 1 - Return a single longest word
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+  let data = sen.split(' ');
+  let word = ' ';
+  for (let idx = 0; idx<data.length; idx++) {
+    word = (data[idx].length>word.length) ? data[idx] : word;
+  };
+  return word;
 }
 
 
