@@ -143,7 +143,14 @@ function sumAllPrimes(num) {
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
-function seekAndDestroy() {}
+function seekAndDestroy(arr, ...values) {
+  
+  for (let i=0; i<values.length; i++) {
+    arr = arr.filter(item=>item !== values[i])
+  }
+  
+  return arr;
+}
 
 
 
