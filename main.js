@@ -20,14 +20,21 @@ function isPalindrome(str) {
 function reverseInt(num) {
   return Number(String(num).split('').reverse().join(''))
 }
-console.log(reverseInt(123));
 
 
 
 /* 4. Return a string with the first letter of every word capitalized
- * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
- */
-function capitalizeWords(str) {}
+* ex. capitalizeWords('i love javascript') === 'I Love Javascript'
+*/
+function capitalizeWords(str) {
+  words = str.split(' ');
+  for (let i=0; i<words.length; i++) {
+    let word = words[i].slice(1,words[i].length)
+    words[i] = words[i].charAt(0).toUpperCase()+word;
+  }
+  return words.join(' ')
+}
+// console.log(capitalizeWords('i love javascript'));
 
 
 
