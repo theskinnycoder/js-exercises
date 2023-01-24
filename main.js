@@ -12,13 +12,15 @@ function reverseString(str) {
 function isPalindrome(str) {
   return (str.split('').reverse().join('')===str) ? true : false;
 }
-console.log(isPalindrome('racecr'));
 
 
 /* 3. Return an integer in reverse
- * ex. reverseInt(521) === 125
- */
-function reverseInt(num) {}
+* ex. reverseInt(521) === 125
+*/
+function reverseInt(num) {
+  return Number(String(num).split('').reverse().join(''))
+}
+console.log(reverseInt(123));
 
 
 
