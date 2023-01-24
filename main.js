@@ -90,7 +90,24 @@ function isAnagram(str1, str2) {
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
  * ex. 'hello there' === 'Ifmmp UIfsf'
  */
-function letterChanges(str) {}
+function letterChanges(str) {
+  let newWords = []
+  words = str.split('');
+  vowels = {'a': 'A', 'e':'E', 'i':'I', 'o':'O', 'u':'U'};
+  
+  for (let i=0; i<=str.length-1; i++) {
+    code = words[i].charCodeAt(0);
+    if (code!==32) {
+      code++;
+    }
+    char = String.fromCharCode(code);
+    if (vowels[char]) {
+      char = vowels[char];
+    }
+    newWords.push(char);
+  }
+  console.log(newWords.join(''));
+}
 
 
 
