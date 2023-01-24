@@ -180,7 +180,13 @@ function sortByHeight(arr) {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters(letters) {
+  charSet = "abcdefghijklmnopqrstuvwxyz".split('');
+  letters = letters.split('');
+  index = charSet.indexOf(letters[letters.length-1]);
+  charSet = charSet.slice(0, index);
+  return charSet.filter(x => {return letters.indexOf(x) < 0})[0];
+}
 
 
 
