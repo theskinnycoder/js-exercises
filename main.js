@@ -1,7 +1,13 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {}
+function reverseString(str) {
+  let revtext = "";
+  for (let i = str.length-1; i>=0; i--){
+    revtext += str[i];
+  }
+  return revtext;
+}
 
 
 
