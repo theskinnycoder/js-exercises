@@ -58,7 +58,41 @@ function capitalizeWords(str) {
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
  */
-function maxCharacter(str) {}
+function maxCharacter(str) {
+  let max = 0, i = 0;
+  let maxletter;
+  let lettersArray = Array.from(str);
+  lettersArray.sort();
+  let currentletter = lettersArray[0];
+  while (i<lettersArray.length){
+    let x = lettersArray.indexOf(currentletter), y = lettersArray.lastIndexOf(currentletter);
+    if (max <= (y-x+1)){
+      max = (y-x+1);
+      maxletter = currentletter;
+    }
+    i = y+1;
+    currentletter = lettersArray[i];
+  }
+  return maxletter;
+  /*
+  let lettersobject = {};
+  let max = 0;
+  let maxletter;
+  let lettersArray = Array.from(str);
+  for ( let x of lettersArray){
+    if (typeof lettersobject[x] == "undefined"){
+      lettersobject[x] = 1;
+    }else {
+      lettersobject[x]+=1;
+    }
+    if (max <= lettersobject[x]){
+      max = lettersobject[x];
+      maxletter = x;
+    }
+  }
+  return maxletter;
+  */
+}
 
 
 
