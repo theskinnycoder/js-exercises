@@ -44,7 +44,14 @@ function reverseInt(num) {
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+  let arr = str.split(" ");
+  for (let i = 0; i<arr.length; i++){
+  arr[i]=arr[i].replace(arr[i][0],arr[i][0].toUpperCase());
+  }
+  let Capstr = arr.join(" ");
+  return Capstr;
+}
 
 
 
