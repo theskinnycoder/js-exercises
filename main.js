@@ -238,7 +238,21 @@ function seekAndDestroy() {
 /* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
  * ex. sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) == [-1, 150, 160, 170, -1, -1, 180, 190]
  */
-function sortByHeight() {}
+function sortByHeight() {
+  let arr = arguments[0];
+  let treepos = [];
+  for (let i =0; i<arr.length; i++){
+  if (arr[i] === -1){
+  treepos.push(i);
+  }
+  }
+  arr.sort(function(a, b){return a-b});
+  while(arr[0]=== -1){
+  arr.shift();
+  }
+  treepos.forEach((num) => {arr.splice(num,0,-1);});
+  return arr;
+}
 
 
 
