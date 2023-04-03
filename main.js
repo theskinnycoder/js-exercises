@@ -261,7 +261,14 @@ function sortByHeight() {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters() {
+  let str = arguments[0];
+  for( let i = 0; i< str.length-1; i++){
+    if (str[i+1] !== String.fromCharCode(str.charCodeAt(i)+1)){return String.fromCharCode(str.charCodeAt(i)+1);
+    }
+  }
+  return undefined;
+}
 
 
 
