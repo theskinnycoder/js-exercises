@@ -61,7 +61,7 @@ function capitalizeWords(str) {
 function maxCharacter(str) {
   let max = 0, i = 0;
   let maxletter;
-  let lettersArray = Array.from(str);
+  let lettersArray = Array.from(str); // str.split("")
   lettersArray.sort();
   let currentletter = lettersArray[0];
   while (i<lettersArray.length){
@@ -162,7 +162,11 @@ function flattenArray(arrays) {
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+  let str1arr = str1.split("").sort();
+  let str2arr = str2.split("").sort();
+  return (str1arr.join("") === str2arr.join(""))? true : false; // return (str1arr.localeCompare(str2arr) == 0)? true : false;
+}
 
 
 
