@@ -139,7 +139,14 @@ function longestWord(sen) {
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
  */
-function chunkArray(arr, len) {}
+function chunkArray(arr, len) {
+  let result = [];
+  for (let i = 0; i<arr.length; i+=len){
+    let subarray = (i+ len <= arr.length)? arr.slice(i,i+len):arr.slice(i,arr.length); 
+    result.push(subarray);
+  }
+  return result;
+}
 
 
 
