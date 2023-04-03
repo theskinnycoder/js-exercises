@@ -275,6 +275,11 @@ function missingLetters() {
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
-function evenOddSums() {}
+function evenOddSums() {
+  let arr = arguments[0];
+  let sum = [0,0];
+  arr.forEach((num) => (num%2 === 0)? sum[0]+=num:sum[1]+=num);
+  return sum;
+}
 
 
