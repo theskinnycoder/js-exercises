@@ -2,7 +2,7 @@
  * ex. reverseString('hello') === 'olleh'
  */
 function reverseString(str) {
-  return str.split("").reverse().join("");
+  return str.split("").reverse().join("")
 }
 
 /* 2. Return true if palindrome and false if not
