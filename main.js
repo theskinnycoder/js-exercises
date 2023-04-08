@@ -23,7 +23,10 @@ function isPalindrome(str) {
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
-function reverseInt(num) {}
+function reverseInt(num) {
+  let reverse = parseInt(num.toString().split("").reverse().join(""));
+  return reverse;
+}
 
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
