@@ -2,13 +2,23 @@
  * ex. reverseString('hello') === 'olleh'
  */
 function reverseString(str) {
-  return str.split("").reverse().join("")
+  return str.split("").reverse().join("");
 }
 
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  let bag = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    bag = bag + str[i];
+  }
+  if (bag == str) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
