@@ -81,6 +81,18 @@ function longestWord(sen) {
   // SOLUTION 1 - Return a single longest word
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+  let words = sen.split(" ");
+  if (!words) {
+    return "";
+  }
+  const sorted = words.sort((a, b) => b.length - a.length); //sort by who's length greater
+  const longestLength = sorted[0].length;
+  const longestWords = sorted.filter((word) => word.length === longestLength);
+  if (longestWords.length === 1) {
+    return longestWords[0];
+  } else {
+    return longestWords;
+  }
 }
 
 /* 8. Split an array into chunked arrays of a specific length
