@@ -132,31 +132,27 @@ function isAnagram(str1, str2) {
  * ex. 'hello there' === 'Ifmmp UIfsf'
  */
 function letterChanges(str) {
-  let vowels = 'aeiouAEIOU';
-  let bag = '';
-
+  let vowels = "aeiouAEIOU";
+  let bag = "";
   for (let i = 0; i < str.length; i++) {
     let char = str.charAt(i);
-
     if (char.match(/[a-z]/i)) {
       char = String.fromCharCode(char.charCodeAt(0) + 1);
 
-      if (char === '{') {
-        char = 'a';
+      if (char === "{") {
+        char = "a";
       }
 
-      if (char === '[') {
-        char = 'A';
+      if (char === "[") {
+        char = "A";
       }
 
       if (vowels.indexOf(char) !== -1) {
         char = char.toUpperCase();
       }
     }
-
     bag += char;
   }
-
   return bag;
 }
 
