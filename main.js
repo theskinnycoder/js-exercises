@@ -97,18 +97,22 @@ function longestWord(sen) {
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
  */
 function chunkArray(arr, len) {
-  const ans=[];
+  const ans = [];
   for (let i = 0; i < arr.length; i += len) {
     const temp = arr.slice(i, i + len);
     ans.push(temp);
   }
-  return ans
+  return ans;
 }
 
 /* 9. Take an array of arrays and flatten to a single array
  * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
  */
-function flattenArray(arrays) {}
+function flattenArray(arrays) {
+  let arr = arrays.join(",");
+  return arr.split(",").map(Number);
+  //return arrays.flat() //array method to flatten
+}
 
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
