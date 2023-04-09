@@ -131,7 +131,34 @@ function isAnagram(str1, str2) {
 /* 11. Change every letter of the string to the one that follows it (circularly), and capitalize the vowels
  * ex. 'hello there' === 'Ifmmp UIfsf'
  */
-function letterChanges(str) {}
+function letterChanges(str) {
+  let vowels = 'aeiouAEIOU';
+  let bag = '';
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str.charAt(i);
+
+    if (char.match(/[a-z]/i)) {
+      char = String.fromCharCode(char.charCodeAt(0) + 1);
+
+      if (char === '{') {
+        char = 'a';
+      }
+
+      if (char === '[') {
+        char = 'A';
+      }
+
+      if (vowels.indexOf(char) !== -1) {
+        char = char.toUpperCase();
+      }
+    }
+
+    bag += char;
+  }
+
+  return bag;
+}
 
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
