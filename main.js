@@ -82,7 +82,6 @@ function longestWord(sen) {
   // SOLUTION 2 - Return an array and include multiple words if they have the same length
   // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
   let words = sen.split(" ");
-
   const sorted = words.sort((a, b) => b.length - a.length); //sort by who's length greater
   const longestLength = sorted[0].length;
   const longestWords = sorted.filter((word) => word.length === longestLength);
@@ -97,7 +96,14 @@ function longestWord(sen) {
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
  * ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
  */
-function chunkArray(arr, len) {}
+function chunkArray(arr, len) {
+  const ans=[];
+  for (let i = 0; i < arr.length; i += len) {
+    const temp = arr.slice(i, i + len);
+    ans.push(temp);
+  }
+  return ans
+}
 
 /* 9. Take an array of arrays and flatten to a single array
  * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
