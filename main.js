@@ -150,8 +150,12 @@ function letterChanges(str) {
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
  */
-function addAll(...num) {
-  let sum = num.reduce((acc, curr) => (acc += +curr));
+function addAll() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    let num = arguments[i];
+    sum += num;
+  }
   return sum;
 }
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
