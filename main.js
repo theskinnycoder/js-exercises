@@ -135,18 +135,9 @@ function letterChanges(str) {
   let vowels = "aeiouAEIOU";
   let bag = "";
   for (let i = 0; i < str.length; i++) {
-    let char = str.charAt(i);
+    let char = str[i];
     if (char.match(/[a-z]/i)) {
       char = String.fromCharCode(char.charCodeAt(0) + 1);
-
-      if (char === "{") {
-        char = "a";
-      }
-
-      if (char === "[") {
-        char = "A";
-      }
-
       if (vowels.indexOf(char) !== -1) {
         char = char.toUpperCase();
       }
@@ -159,8 +150,10 @@ function letterChanges(str) {
 /* 12. Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
  * ex. addAll(2,5,6,7) === 20
  */
-function addAll() {}
-
+function addAll(...num) {
+  let sum = num.reduce((acc, curr) => (acc += +curr));
+  return sum;
+}
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
  * ex. sumAllPrimes(10) == 17
  */
