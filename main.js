@@ -197,26 +197,36 @@ function seekAndDestroy(arr, ...args) {
  * ex. sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) == [-1, 150, 160, 170, -1, -1, 180, 190]
  */
 function sortByHeight() {
-  let arr=arguments[0]
-    let sorted = arr.filter(temp => temp !== -1).sort((a, b) => a - b);
-  let ans= [];
+  let arr = arguments[0];
+  let sorted = arr.filter((temp) => temp !== -1).sort((a, b) => a - b);
+  let ans = [];
   let count = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === -1) {
-     ans.push(arr[i]); 
+      ans.push(arr[i]);
     } else {
-     ans.push(sorted[count]);  
+      ans.push(sorted[count]);
       count++;
     }
   }
-return ans
+  return ans;
 }
 /* 16. Find the missing letter in the passed letter range and return it. If all letters are present, return undefined
  * ex. missingLetters("abce") == "d"
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters() {
+  let letter = arguments[0];
+  let right = letter.charCodeAt(0);
+  let left = letter.charCodeAt(letter.length - 1);
+  for (let i = right; i <= left; i++) {
+    if (!letter.includes(String.fromCharCode(i))) {
+      return String.fromCharCode(i);
+    }
+  }
+  return undefined;
+}
 
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
