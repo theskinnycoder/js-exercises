@@ -161,7 +161,30 @@ function addAll() {
 /* 13. Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
  * ex. sumAllPrimes(10) == 17
  */
-function sumAllPrimes() {}
+function sumAllPrimes() {
+  let num = arguments[0];
+  function primecheck(num) {
+    let count = 0;
+    if (num <= 1) return false;
+    for (let i = 2; i <= num / 2; i++) {
+      if (num % i == 0) {
+        count++;
+      }
+    }
+    if (count == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    if (primecheck(i)) {
+      sum += i;
+    }
+  }
+  return sum;
+}
 
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
