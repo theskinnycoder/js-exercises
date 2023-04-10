@@ -121,10 +121,8 @@ function isAnagram(str1, str2) {
   if (str1.length !== str2.length) {
     return false;
   }
-
   const charstr1 = str1.split("").sort().join("");
   const charstr2 = str2.split("").sort().join("");
-
   return charstr1 === charstr2;
 }
 
