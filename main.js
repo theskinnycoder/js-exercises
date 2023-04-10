@@ -190,7 +190,7 @@ function sumAllPrimes() {
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
 function seekAndDestroy(arr, ...args) {
-  let temp = arr.filter((item) => !args.includes(item));
+  const temp = arr.filter((item) => !args.includes(item));
   return temp;
 }
 /* 15. Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
