@@ -14,7 +14,18 @@ function reverseString(str) {
 /* 2. Return true if palindrome and false if not
  * ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
  */
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    let l = 0;
+    let r = str.length - 1;
+    while (l < r) {
+        if (str[l] != str[r]) {
+            return false;
+        }
+        l++;
+        r--;
+    }
+    return true;
+}
 
 
 
