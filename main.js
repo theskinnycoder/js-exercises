@@ -33,12 +33,12 @@ function isPalindrome(str) {
  * ex. reverseInt(521) === 125
  */
 function reverseInt(num) {
-  let b = 0;
-  while (num > 0) {
-      b = b * 10 + num % 10;
-      num = Math.floor(num / 10);
-  }
-  return b;
+    let b = 0;
+    while (num > 0) {
+        b = b * 10 + num % 10;
+        num = Math.floor(num / 10);
+    }
+    return b;
 }
 
 
@@ -46,7 +46,13 @@ function reverseInt(num) {
 /* 4. Return a string with the first letter of every word capitalized
  * ex. capitalizeWords('i love javascript') === 'I Love Javascript'
  */
-function capitalizeWords(str) {}
+function capitalizeWords(str) {
+    let a = str.split(" ");
+    for (let i = 0; i < a.length; i++) {
+        a[i] = a[i][0].toUpperCase() + a[i].slice(1);
+    }
+    return a.join(" ")
+}
 
 
 
