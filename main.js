@@ -238,7 +238,14 @@ function sumAllPrimes() {
 /* 14. Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
  * ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
  */
-function seekAndDestroy() {}
+function seekAndDestroy() {
+    let a = arguments[0]
+    let b = Array.prototype.slice.call(arguments, 1)
+    for (let i = 0; i < a.length; i++) {
+        if (b.indexOf(a[i]) != -1) a.splice(i, 1);
+    }
+    return a
+}
 
 
 
