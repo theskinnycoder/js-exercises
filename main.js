@@ -162,7 +162,27 @@ function flattenArray(arrays) {
 /* 10. Return true if anagram and false if not
  * ex. isAnagram('elbow', 'below') === true
  */
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+    const a = {}
+    for (const i of str1) {
+        if (a.hasOwnProperty(i)) {
+            a[i] += 1;
+        } else {
+            a[i] = 1;
+        }
+    }
+    for (let i = 0; i < str2.length; i++) {
+        if (a.hasOwnProperty(str1[i])) {
+            a[str1[i]] -= 1;
+            if (a[str1[i]] == 0) {
+                delete a[str1[i]]
+            }
+        } else {
+            return false
+        }
+    }
+    return (Object.keys(a).length == 0) ? true : false
+}
 
 
 
