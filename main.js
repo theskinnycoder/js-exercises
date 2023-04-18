@@ -59,7 +59,26 @@ function capitalizeWords(str) {
 /* 5. Return the character that is most common in a string
  * ex. maxCharacter('javascript') == 'a'
  */
-function maxCharacter(str) {}
+function maxCharacter(str) {
+    if (str.length == 0) {
+        return str
+    }
+    const a = {}
+    let m = 0
+    let ma = str[0]
+    for (const i of str) {
+        if (a.hasOwnProperty(i)) {
+            a[i] += 1;
+            if (a[i] > m) {
+                m = a[i]
+                ma = i
+            }
+        } else {
+            a[i] = 1;
+        }
+    }
+    return ma
+}
 
 
 
