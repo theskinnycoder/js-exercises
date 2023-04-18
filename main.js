@@ -284,4 +284,12 @@ function missingLetters() {
 /* 17. Take in an array and return an array of the sums of even and odd numbers
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
-function evenOddSums() {}
+function evenOddSums() {
+    let odd = 0;
+    let even = 0;
+    for (const i of arguments[0]) {
+        if (i % 2) odd += i;
+        else even += i;
+    }
+    return [odd, even]
+}
