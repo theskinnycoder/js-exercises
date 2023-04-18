@@ -32,7 +32,14 @@ function isPalindrome(str) {
 /* 3. Return an integer in reverse
  * ex. reverseInt(521) === 125
  */
-function reverseInt(num) {}
+function reverseInt(num) {
+  let b = 0;
+  while (num > 0) {
+      b = b * 10 + num % 10;
+      num = Math.floor(num / 10);
+  }
+  return b;
+}
 
 
 
