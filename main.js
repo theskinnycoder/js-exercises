@@ -1,7 +1,13 @@
 /* 1. Return a string in reverse
  * ex. reverseString('hello') === 'olleh'
  */
-function reverseString(str) {}
+function reverseString(str) {
+    let s = ""
+    for (let i = str.length - 1; i >= 0; i--) {
+        s += str[i]
+    }
+    return s
+}
 
 
 
@@ -42,9 +48,9 @@ function fizzBuzz() {}
  * ex. longestWord('Hi there, my name is Brad') === 'there,'
  */
 function longestWord(sen) {
-  // SOLUTION 1 - Return a single longest word
-  // SOLUTION 2 - Return an array and include multiple words if they have the same length
-  // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
+    // SOLUTION 1 - Return a single longest word
+    // SOLUTION 2 - Return an array and include multiple words if they have the same length
+    // SOLUTION 3 - Only return an array if multiple words, otherwise return a string
 }
 
 
@@ -119,5 +125,3 @@ function missingLetters() {}
  * ex. evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
  */
 function evenOddSums() {}
-
-
