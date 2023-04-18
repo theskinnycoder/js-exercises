@@ -270,7 +270,14 @@ function sortByHeight() {
  * ex. missingLetters("abcdefghjklmno") == "i"
  * ex. missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
  */
-function missingLetters() {}
+function missingLetters() {
+    const alpha = "abcdefghijklmnopqrstuvwxyz"
+    for (const i in arguments[0]) {
+        if (alpha[i] != arguments[0][i]) {
+            return alpha[i]
+        }
+    }
+}
 
 
 
