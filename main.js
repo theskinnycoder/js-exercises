@@ -145,7 +145,17 @@ function chunkArray(arr, len) {
 /* 9. Take an array of arrays and flatten to a single array
  * ex. flattenArray([[1, 2], [3, 4], [5, 6], [7]]) should return [1, 2, 3, 4, 5, 6, 7]
  */
-function flattenArray(arrays) {}
+function flattenArray(arrays) {
+    let s = []
+    for (const i of arrays) {
+        if (Array.isArray(i)) {
+            s = s.concat(i)
+        } else {
+            s.push(i)
+        }
+    }
+    return s
+}
 
 
 
